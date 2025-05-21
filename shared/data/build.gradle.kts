@@ -18,7 +18,7 @@ kotlin {
         }
     }
 
-    val xcframeworkName = "Shared"
+    val xcframeworkName = "Data"
     val xcf = XCFramework(xcframeworkName)
     listOf(
         iosX64(),
@@ -36,8 +36,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(project(":shared:data"))
-            //put your multiplatform dependencies here
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
