@@ -15,7 +15,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "cmp-shared"
-include(":shared")
+include(":umbrella")
 include(":data")
 
 //project(":shared:data").projectDir = file("shared/data")
