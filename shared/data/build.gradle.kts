@@ -28,7 +28,7 @@ kotlin {
         it.binaries.framework {
             baseName = xcframeworkName
             // Specify CFBundleIdentifier to uniquely identify the framework
-            binaryOption("bundleId", "com.bc.${xcframeworkName}")
+            binaryOption("bundleId", "com.bc.${xcframeworkName}.data")
             xcf.add(this)
             isStatic = true
         }
@@ -45,7 +45,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.bc.cmp_shared"
+    namespace = "com.bc.cmp_shared.data"
     compileSdk = 35
     defaultConfig {
         minSdk = 24
