@@ -36,7 +36,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(project(":shared:data"))
+            api(project(":data"))
             //put your multiplatform dependencies here
         }
         commonTest.dependencies {
