@@ -18,29 +18,20 @@ kotlin {
         }
     }
 
-    val xcframeworkName = "shared"
-    val xcf = XCFramework(xcframeworkName)
     listOf(
         iosX64(),
         iosArm64(),
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = xcframeworkName
             // Specify CFBundleIdentifier to uniquely identify the framework
-            binaryOption("bundleId", "com.bc.${xcframeworkName}")
-            xcf.add(this)
-
-            export(project(":umbrella:data"))
             isStatic = true
         }
     }
 
     sourceSets {
         commonMain.dependencies {
-            api(project(":umbrella:data"))
-            implementation(project(":umbrella:analytics"))
-            //put your multiplatform dependencies here
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -49,7 +40,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.bc.cmp_shared"
+    namespace = "com.bc.cmp_shared.analytics"
     compileSdk = 35
     defaultConfig {
         minSdk = 24
