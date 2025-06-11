@@ -18,7 +18,7 @@ kotlin {
         }
     }
 
-    val xcframeworkName = "shared"
+    val xcframeworkName = "DataA"
     val xcf = XCFramework(xcframeworkName)
     listOf(
         iosX64(),
@@ -28,21 +28,15 @@ kotlin {
         it.binaries.framework {
             baseName = xcframeworkName
             // Specify CFBundleIdentifier to uniquely identify the framework
-            binaryOption("bundleId", "com.bc.${xcframeworkName}")
+            binaryOption("bundleId", "com.bc.${xcframeworkName}.dataa")
             xcf.add(this)
-
-            export(project(":umbrella:dataA"))
-            export(project(":umbrella:dataB"))
             isStatic = true
         }
     }
 
     sourceSets {
         commonMain.dependencies {
-            api(project(":umbrella:dataA"))
-            api(project(":umbrella:dataB"))
             implementation(project(":umbrella:core"))
-            //put your multiplatform dependencies here
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -51,7 +45,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.bc.cmp_shared"
+    namespace = "com.bc.cmp_shared.data"
     compileSdk = 35
     defaultConfig {
         minSdk = 24

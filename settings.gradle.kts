@@ -16,8 +16,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "cmp-shared"
 include(":umbrella")
-include(":umbrella:data")
-include(":umbrella:analytics")
+include(":umbrella:core")
+include(":umbrella:dataA")
+include(":umbrella:dataB")
 
-project(":umbrella:data").projectDir = file("umbrella/data")
-project(":umbrella:analytics").projectDir = file("umbrella/analytics")
+project(":umbrella:core").projectDir = file("umbrella/core")
+project(":umbrella:dataA").projectDir = file("umbrella/dataA")
+project(":umbrella:dataB").projectDir = file("umbrella/dataB")
